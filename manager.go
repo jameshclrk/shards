@@ -26,7 +26,7 @@ type Manager struct {
 }
 
 // AddHandler registers an event handler for all Shards.
-func (m *Manager) AddHandler(handler interface{}) {
+func (m *Manager) AddHandler(handler interface{}) func() {
 	m.Lock()
 	defer m.Unlock()
 
@@ -34,6 +34,8 @@ func (m *Manager) AddHandler(handler interface{}) {
 
 	for _, shard := range m.Shards {
 		shard.AddHandler(handler)
+	}
+	return func() {
 	}
 }
 
