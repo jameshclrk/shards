@@ -1,5 +1,5 @@
-module github.com/servusdei2018/shards
+module github.com/jameshclrk/shards
 
 go 1.15
 
-require github.com/bwmarrin/discordgo v0.22.1
+require github.com/bwmarrin/discordgo v0.23.1
